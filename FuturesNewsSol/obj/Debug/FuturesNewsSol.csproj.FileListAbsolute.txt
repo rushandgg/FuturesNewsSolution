@@ -1,0 +1,14 @@
+C:\Users\bso94\Desktop\FuturesNewsSolution\FuturesNewsSol\FuturesNewsSol\bin\Debug\FuturesNewsSol.exe.config
+C:\Users\bso94\Desktop\FuturesNewsSolution\FuturesNewsSol\FuturesNewsSol\bin\Debug\FuturesNewsSol.exe
+C:\Users\bso94\Desktop\FuturesNewsSolution\FuturesNewsSol\FuturesNewsSol\bin\Debug\FuturesNewsSol.pdb
+C:\Users\bso94\Desktop\FuturesNewsSolution\FuturesNewsSol\FuturesNewsSol\obj\Debug\FuturesNewsSol.csproj.AssemblyReference.cache
+C:\Users\bso94\Desktop\FuturesNewsSolution\FuturesNewsSol\FuturesNewsSol\obj\Debug\FuturesNewsSol.MainForm.resources
+C:\Users\bso94\Desktop\FuturesNewsSolution\FuturesNewsSol\FuturesNewsSol\obj\Debug\FuturesNewsSol.Properties.Resources.resources
+C:\Users\bso94\Desktop\FuturesNewsSolution\FuturesNewsSol\FuturesNewsSol\obj\Debug\FuturesNewsSol.csproj.GenerateResource.cache
+C:\Users\bso94\Desktop\FuturesNewsSolution\FuturesNewsSol\FuturesNewsSol\obj\Debug\FuturesNewsSol.csproj.CoreCompileInputs.cache
+C:\Users\bso94\Desktop\FuturesNewsSolution\FuturesNewsSol\FuturesNewsSol\obj\Debug\FuturesNewsSol.exe
+C:\Users\bso94\Desktop\FuturesNewsSolution\FuturesNewsSol\FuturesNewsSol\obj\Debug\FuturesNewsSol.pdb
+C:\Users\bso94\Desktop\FuturesNewsSolution\FuturesNewsSol\FuturesNewsSol\bin\Debug\Json.Net.dll
+C:\Users\bso94\Desktop\FuturesNewsSolution\FuturesNewsSol\FuturesNewsSol\bin\Debug\Newtonsoft.Json.dll
+C:\Users\bso94\Desktop\FuturesNewsSolution\FuturesNewsSol\FuturesNewsSol\bin\Debug\Newtonsoft.Json.xml
+C:\Users\bso94\Desktop\FuturesNewsSolution\FuturesNewsSol\FuturesNewsSol\obj\Debug\FuturesNewsSol.csproj.CopyComplete
