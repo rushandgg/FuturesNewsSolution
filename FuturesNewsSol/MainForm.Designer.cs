@@ -29,22 +29,30 @@
         private void InitializeComponent()
         {
             this.newsLoadBtn = new System.Windows.Forms.Button();
-            this.newsRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.contentRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.newsListView = new System.Windows.Forms.ListView();
+            this.newsRtx = new System.Windows.Forms.RichTextBox();
+            this.contentRtx = new System.Windows.Forms.RichTextBox();
+            this.newsLvw = new System.Windows.Forms.ListView();
+            this.num = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ticker = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.num = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.contentRichTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.contentRtx2 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.translateBtn = new System.Windows.Forms.Button();
+            this.min1Btn = new System.Windows.Forms.Button();
+            this.min3Btn = new System.Windows.Forms.Button();
+            this.min5Btn = new System.Windows.Forms.Button();
+            this.min15Btn = new System.Windows.Forms.Button();
+            this.min30Btn = new System.Windows.Forms.Button();
+            this.min60Btn = new System.Windows.Forms.Button();
+            this.comTypeCmb = new System.Windows.Forms.ComboBox();
+            this.tickerTxt = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // newsLoadBtn
             // 
-            this.newsLoadBtn.Location = new System.Drawing.Point(329, 195);
+            this.newsLoadBtn.Location = new System.Drawing.Point(329, 237);
             this.newsLoadBtn.Name = "newsLoadBtn";
             this.newsLoadBtn.Size = new System.Drawing.Size(175, 62);
             this.newsLoadBtn.TabIndex = 1;
@@ -52,40 +60,45 @@
             this.newsLoadBtn.UseVisualStyleBackColor = true;
             this.newsLoadBtn.Click += new System.EventHandler(this.newsLoadBtn_Click);
             // 
-            // newsRichTextBox
+            // newsRtx
             // 
-            this.newsRichTextBox.Location = new System.Drawing.Point(12, 319);
-            this.newsRichTextBox.Name = "newsRichTextBox";
-            this.newsRichTextBox.Size = new System.Drawing.Size(414, 94);
-            this.newsRichTextBox.TabIndex = 3;
-            this.newsRichTextBox.Text = "";
+            this.newsRtx.Location = new System.Drawing.Point(12, 347);
+            this.newsRtx.Name = "newsRtx";
+            this.newsRtx.Size = new System.Drawing.Size(414, 94);
+            this.newsRtx.TabIndex = 3;
+            this.newsRtx.Text = "";
             // 
-            // contentRichTextBox
+            // contentRtx
             // 
-            this.contentRichTextBox.Location = new System.Drawing.Point(510, 30);
-            this.contentRichTextBox.Name = "contentRichTextBox";
-            this.contentRichTextBox.Size = new System.Drawing.Size(414, 290);
-            this.contentRichTextBox.TabIndex = 4;
-            this.contentRichTextBox.Text = "";
+            this.contentRtx.Location = new System.Drawing.Point(510, 30);
+            this.contentRtx.Name = "contentRtx";
+            this.contentRtx.Size = new System.Drawing.Size(414, 290);
+            this.contentRtx.TabIndex = 4;
+            this.contentRtx.Text = "";
             // 
-            // newsListView
+            // newsLvw
             // 
-            this.newsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.newsLvw.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.num,
             this.title,
             this.date,
             this.ticker});
-            this.newsListView.FullRowSelect = true;
-            this.newsListView.HideSelection = false;
-            this.newsListView.LabelWrap = false;
-            this.newsListView.Location = new System.Drawing.Point(12, 12);
-            this.newsListView.MultiSelect = false;
-            this.newsListView.Name = "newsListView";
-            this.newsListView.Size = new System.Drawing.Size(492, 177);
-            this.newsListView.TabIndex = 5;
-            this.newsListView.UseCompatibleStateImageBehavior = false;
-            this.newsListView.View = System.Windows.Forms.View.Details;
-            this.newsListView.SelectedIndexChanged += new System.EventHandler(this.newsListView_SelectedIndexChanged);
+            this.newsLvw.FullRowSelect = true;
+            this.newsLvw.HideSelection = false;
+            this.newsLvw.LabelWrap = false;
+            this.newsLvw.Location = new System.Drawing.Point(12, 54);
+            this.newsLvw.MultiSelect = false;
+            this.newsLvw.Name = "newsLvw";
+            this.newsLvw.Size = new System.Drawing.Size(492, 177);
+            this.newsLvw.TabIndex = 5;
+            this.newsLvw.UseCompatibleStateImageBehavior = false;
+            this.newsLvw.View = System.Windows.Forms.View.Details;
+            this.newsLvw.SelectedIndexChanged += new System.EventHandler(this.newsListView_SelectedIndexChanged);
+            // 
+            // num
+            // 
+            this.num.Text = "Num";
+            this.num.Width = 40;
             // 
             // title
             // 
@@ -102,18 +115,13 @@
             this.ticker.Text = "Ticker";
             this.ticker.Width = 120;
             // 
-            // num
+            // contentRtx2
             // 
-            this.num.Text = "Num";
-            this.num.Width = 40;
-            // 
-            // contentRichTextBox2
-            // 
-            this.contentRichTextBox2.Location = new System.Drawing.Point(510, 347);
-            this.contentRichTextBox2.Name = "contentRichTextBox2";
-            this.contentRichTextBox2.Size = new System.Drawing.Size(414, 290);
-            this.contentRichTextBox2.TabIndex = 6;
-            this.contentRichTextBox2.Text = "";
+            this.contentRtx2.Location = new System.Drawing.Point(510, 347);
+            this.contentRtx2.Name = "contentRtx2";
+            this.contentRtx2.Size = new System.Drawing.Size(414, 290);
+            this.contentRtx2.TabIndex = 6;
+            this.contentRtx2.Text = "";
             // 
             // label1
             // 
@@ -133,28 +141,111 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "번역";
             // 
-            // button1
+            // translateBtn
             // 
-            this.button1.Location = new System.Drawing.Point(329, 463);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(175, 62);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "NewsLoad";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.translateBtn.Location = new System.Drawing.Point(329, 463);
+            this.translateBtn.Name = "translateBtn";
+            this.translateBtn.Size = new System.Drawing.Size(175, 62);
+            this.translateBtn.TabIndex = 9;
+            this.translateBtn.Text = "Translate";
+            this.translateBtn.UseVisualStyleBackColor = true;
+            this.translateBtn.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // min1Btn
+            // 
+            this.min1Btn.Location = new System.Drawing.Point(1272, 23);
+            this.min1Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.min1Btn.Name = "min1Btn";
+            this.min1Btn.Size = new System.Drawing.Size(34, 34);
+            this.min1Btn.TabIndex = 10;
+            this.min1Btn.Text = "1";
+            this.min1Btn.UseVisualStyleBackColor = true;
+            // 
+            // min3Btn
+            // 
+            this.min3Btn.Location = new System.Drawing.Point(1306, 23);
+            this.min3Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.min3Btn.Name = "min3Btn";
+            this.min3Btn.Size = new System.Drawing.Size(34, 34);
+            this.min3Btn.TabIndex = 11;
+            this.min3Btn.Text = "3";
+            this.min3Btn.UseVisualStyleBackColor = true;
+            // 
+            // min5Btn
+            // 
+            this.min5Btn.Location = new System.Drawing.Point(1340, 23);
+            this.min5Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.min5Btn.Name = "min5Btn";
+            this.min5Btn.Size = new System.Drawing.Size(34, 34);
+            this.min5Btn.TabIndex = 12;
+            this.min5Btn.Text = "5";
+            this.min5Btn.UseVisualStyleBackColor = true;
+            // 
+            // min15Btn
+            // 
+            this.min15Btn.Location = new System.Drawing.Point(1374, 23);
+            this.min15Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.min15Btn.Name = "min15Btn";
+            this.min15Btn.Size = new System.Drawing.Size(34, 34);
+            this.min15Btn.TabIndex = 13;
+            this.min15Btn.Text = "15";
+            this.min15Btn.UseVisualStyleBackColor = true;
+            // 
+            // min30Btn
+            // 
+            this.min30Btn.Location = new System.Drawing.Point(1408, 23);
+            this.min30Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.min30Btn.Name = "min30Btn";
+            this.min30Btn.Size = new System.Drawing.Size(34, 34);
+            this.min30Btn.TabIndex = 14;
+            this.min30Btn.Text = "30";
+            this.min30Btn.UseVisualStyleBackColor = true;
+            // 
+            // min60Btn
+            // 
+            this.min60Btn.Location = new System.Drawing.Point(1442, 23);
+            this.min60Btn.Margin = new System.Windows.Forms.Padding(0);
+            this.min60Btn.Name = "min60Btn";
+            this.min60Btn.Size = new System.Drawing.Size(34, 34);
+            this.min60Btn.TabIndex = 15;
+            this.min60Btn.Text = "60";
+            this.min60Btn.UseVisualStyleBackColor = true;
+            // 
+            // comTypeCmb
+            // 
+            this.comTypeCmb.FormattingEnabled = true;
+            this.comTypeCmb.Location = new System.Drawing.Point(1006, 30);
+            this.comTypeCmb.Name = "comTypeCmb";
+            this.comTypeCmb.Size = new System.Drawing.Size(121, 23);
+            this.comTypeCmb.TabIndex = 16;
+            // 
+            // tickerTxt
+            // 
+            this.tickerTxt.Location = new System.Drawing.Point(1149, 30);
+            this.tickerTxt.Name = "tickerTxt";
+            this.tickerTxt.Size = new System.Drawing.Size(96, 25);
+            this.tickerTxt.TabIndex = 17;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(994, 680);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1490, 646);
+            this.Controls.Add(this.tickerTxt);
+            this.Controls.Add(this.comTypeCmb);
+            this.Controls.Add(this.min60Btn);
+            this.Controls.Add(this.min30Btn);
+            this.Controls.Add(this.min15Btn);
+            this.Controls.Add(this.min5Btn);
+            this.Controls.Add(this.min3Btn);
+            this.Controls.Add(this.min1Btn);
+            this.Controls.Add(this.translateBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.contentRichTextBox2);
-            this.Controls.Add(this.newsListView);
-            this.Controls.Add(this.contentRichTextBox);
-            this.Controls.Add(this.newsRichTextBox);
+            this.Controls.Add(this.contentRtx2);
+            this.Controls.Add(this.newsLvw);
+            this.Controls.Add(this.contentRtx);
+            this.Controls.Add(this.newsRtx);
             this.Controls.Add(this.newsLoadBtn);
             this.Name = "MainForm";
             this.Text = "FuturesNewsSol";
@@ -165,17 +256,25 @@
 
         #endregion
         private System.Windows.Forms.Button newsLoadBtn;
-        private System.Windows.Forms.RichTextBox newsRichTextBox;
-        private System.Windows.Forms.RichTextBox contentRichTextBox;
-        private System.Windows.Forms.ListView newsListView;
+        private System.Windows.Forms.RichTextBox newsRtx;
+        private System.Windows.Forms.RichTextBox contentRtx;
+        private System.Windows.Forms.ListView newsLvw;
         private System.Windows.Forms.ColumnHeader title;
         private System.Windows.Forms.ColumnHeader date;
         private System.Windows.Forms.ColumnHeader ticker;
         private System.Windows.Forms.ColumnHeader num;
-        private System.Windows.Forms.RichTextBox contentRichTextBox2;
+        private System.Windows.Forms.RichTextBox contentRtx2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button translateBtn;
+        private System.Windows.Forms.Button min1Btn;
+        private System.Windows.Forms.Button min3Btn;
+        private System.Windows.Forms.Button min5Btn;
+        private System.Windows.Forms.Button min15Btn;
+        private System.Windows.Forms.Button min30Btn;
+        private System.Windows.Forms.Button min60Btn;
+        private System.Windows.Forms.ComboBox comTypeCmb;
+        private System.Windows.Forms.TextBox tickerTxt;
     }
 }
 

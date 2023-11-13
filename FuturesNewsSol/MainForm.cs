@@ -28,7 +28,7 @@ namespace FuturesNewsSol
         private void newsLoadBtn_Click(object sender, EventArgs e)
         {
             // 뉴스 목록인 listview 초기화, 본문 목록인 list 초기화
-            newsListView.Items.Clear();
+            newsLvw.Items.Clear();
             contentList.Clear();
 
             int articlesSize = 2;
@@ -62,40 +62,36 @@ namespace FuturesNewsSol
                 item.SubItems.Add(ticker);
                 contentList.Add(content);
 
-                newsListView.Items.Add(item);
+                newsLvw.Items.Add(item);
             }
         }
 
         private void newsListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Null값일 때 오류 방지
-            if (newsListView.SelectedItems.Count != 0) 
+            if (newsLvw.SelectedItems.Count != 0) 
             { 
                 // 선택된 항목의 인덱스 가져옴
-                int SelectRow = newsListView.SelectedItems[0].Index;
+                int SelectRow = newsLvw.SelectedItems[0].Index;
                 // 제목 + 본문
-                contentRichTextBox.Text = newsListView.Items[SelectRow].SubItems[1].Text + "\n\n" + contentList[SelectRow].ToString();
+                contentRtx.Text = newsLvw.Items[SelectRow].SubItems[1].Text + "\n\n" + contentList[SelectRow].ToString();
 
-                
+                PapagoTranslate(contentRtx.Text);
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void PapagoTranslate(string sourceText)
         {
             // 번역문 만들기
             string sUrl = "https://openapi.naver.com/v1/papago/n2mt";
 
             // 파라미터에 값넣기 (파파고 NMT API 가이드에서 -d 부분이 파라미터이다)
-            //string sourceText = contentRichTextBox.Text;
-            
-            string sourceText = "GoodRx Shares Plunge 18aaaaaaaaaaaaaasssssssss%";
-            MessageBox.Show(sourceText);
-            
-            string sParam = string.Format($"source=en&target=ko&text={sourceText}");
+            sourceText = contentRtx.Text;
+
+            string sParam = string.Format($"source=en&target=ko&text={Uri.EscapeDataString(sourceText)}");
 
             // 파라미터를 Character Set에 맞게 변경
             byte[] bytearry = Encoding.UTF8.GetBytes(sParam);
-            MessageBox.Show(bytearry.Length.ToString());
+
             // 서버에 요청
             WebRequest webRequest = WebRequest.Create(sUrl);
             webRequest.Method = "POST";
@@ -124,7 +120,52 @@ namespace FuturesNewsSol
 
             JObject jObject = JObject.Parse(sReturn);
             // JSON 출력포맷에서 필요한 부분(번역된 문장)만 가져오기
-            contentRichTextBox2.Text = jObject["message"]["result"]["translatedText"].ToString();
+            contentRtx2.Text = jObject["message"]["result"]["translatedText"].ToString();
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // 번역문 만들기
+            string sUrl = "https://openapi.naver.com/v1/papago/n2mt";
+
+            // 파라미터에 값넣기 (파파고 NMT API 가이드에서 -d 부분이 파라미터이다)
+            string sourceText = contentRtx.Text;
+            
+            string sParam = string.Format($"source=en&target=ko&text={Uri.EscapeDataString(sourceText)}");
+
+            // 파라미터를 Character Set에 맞게 변경
+            byte[] bytearry = Encoding.UTF8.GetBytes(sParam);
+ 
+            // 서버에 요청
+            WebRequest webRequest = WebRequest.Create(sUrl);
+            webRequest.Method = "POST";
+            webRequest.ContentType = "application/x-www-form-urlencoded";
+
+            // 헤더 추가하기 (파파고 NMT API 가이드에서 -h 부분이 헤더이다)
+            webRequest.Headers.Add("X-Naver-Client-Id", "");
+            webRequest.Headers.Add("X-Naver-Client-Secret", "");
+
+            // 요청 데이터 길이
+            webRequest.ContentLength = bytearry.Length;
+
+            Stream stream = webRequest.GetRequestStream();
+            stream.Write(bytearry, 0, bytearry.Length);
+            stream.Close();
+
+            // 응답 데이터 가져오기(출력포맷)
+            WebResponse webResponse = webRequest.GetResponse();
+            stream = webResponse.GetResponseStream();
+            StreamReader streamReader = new StreamReader(stream);
+            string sReturn = streamReader.ReadToEnd();
+
+            streamReader.Close();
+            stream.Close();
+            webResponse.Close();
+
+            JObject jObject = JObject.Parse(sReturn);
+            // JSON 출력포맷에서 필요한 부분(번역된 문장)만 가져오기
+            contentRtx2.Text = jObject["message"]["result"]["translatedText"].ToString();
             
         }
     }
