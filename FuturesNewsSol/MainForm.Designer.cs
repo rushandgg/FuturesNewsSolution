@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.newsLoadBtn = new System.Windows.Forms.Button();
-            this.newsRtx = new System.Windows.Forms.RichTextBox();
             this.contentRtx = new System.Windows.Forms.RichTextBox();
             this.newsLvw = new System.Windows.Forms.ListView();
             this.num = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -39,7 +38,6 @@
             this.contentRtx2 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.translateBtn = new System.Windows.Forms.Button();
             this.min1Btn = new System.Windows.Forms.Button();
             this.min3Btn = new System.Windows.Forms.Button();
             this.min5Btn = new System.Windows.Forms.Button();
@@ -48,6 +46,7 @@
             this.min60Btn = new System.Windows.Forms.Button();
             this.comTypeCmb = new System.Windows.Forms.ComboBox();
             this.tickerTxt = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // newsLoadBtn
@@ -59,14 +58,6 @@
             this.newsLoadBtn.Text = "NewsLoad";
             this.newsLoadBtn.UseVisualStyleBackColor = true;
             this.newsLoadBtn.Click += new System.EventHandler(this.newsLoadBtn_Click);
-            // 
-            // newsRtx
-            // 
-            this.newsRtx.Location = new System.Drawing.Point(12, 347);
-            this.newsRtx.Name = "newsRtx";
-            this.newsRtx.Size = new System.Drawing.Size(414, 94);
-            this.newsRtx.TabIndex = 3;
-            this.newsRtx.Text = "";
             // 
             // contentRtx
             // 
@@ -140,16 +131,6 @@
             this.label2.Size = new System.Drawing.Size(37, 15);
             this.label2.TabIndex = 8;
             this.label2.Text = "번역";
-            // 
-            // translateBtn
-            // 
-            this.translateBtn.Location = new System.Drawing.Point(329, 463);
-            this.translateBtn.Name = "translateBtn";
-            this.translateBtn.Size = new System.Drawing.Size(175, 62);
-            this.translateBtn.TabIndex = 9;
-            this.translateBtn.Text = "Translate";
-            this.translateBtn.UseVisualStyleBackColor = true;
-            this.translateBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // min1Btn
             // 
@@ -226,11 +207,22 @@
             this.tickerTxt.Size = new System.Drawing.Size(96, 25);
             this.tickerTxt.TabIndex = 17;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(315, 432);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(175, 62);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "NewsLoad";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1490, 646);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tickerTxt);
             this.Controls.Add(this.comTypeCmb);
             this.Controls.Add(this.min60Btn);
@@ -239,13 +231,11 @@
             this.Controls.Add(this.min5Btn);
             this.Controls.Add(this.min3Btn);
             this.Controls.Add(this.min1Btn);
-            this.Controls.Add(this.translateBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.contentRtx2);
             this.Controls.Add(this.newsLvw);
             this.Controls.Add(this.contentRtx);
-            this.Controls.Add(this.newsRtx);
             this.Controls.Add(this.newsLoadBtn);
             this.Name = "MainForm";
             this.Text = "FuturesNewsSol";
@@ -256,7 +246,6 @@
 
         #endregion
         private System.Windows.Forms.Button newsLoadBtn;
-        private System.Windows.Forms.RichTextBox newsRtx;
         private System.Windows.Forms.RichTextBox contentRtx;
         private System.Windows.Forms.ListView newsLvw;
         private System.Windows.Forms.ColumnHeader title;
@@ -266,7 +255,6 @@
         private System.Windows.Forms.RichTextBox contentRtx2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button translateBtn;
         private System.Windows.Forms.Button min1Btn;
         private System.Windows.Forms.Button min3Btn;
         private System.Windows.Forms.Button min5Btn;
@@ -275,6 +263,7 @@
         private System.Windows.Forms.Button min60Btn;
         private System.Windows.Forms.ComboBox comTypeCmb;
         private System.Windows.Forms.TextBox tickerTxt;
+        private System.Windows.Forms.Button button1;
     }
 }
 
